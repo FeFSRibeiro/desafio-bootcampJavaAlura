@@ -3,12 +3,11 @@ package br.com.livraria.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+//import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class AutorDao {
 	public List<Autor> listar(){
 			
 		try {
-			 String sql= "select nome,email,dataNascimento from autores";
+			 String sql= "select nome,email, dataNascimento from autores";
 			 
 			 PreparedStatement ps = conexao.prepareStatement(sql);
 			 ResultSet rs = ps.executeQuery();
@@ -57,8 +56,8 @@ public class AutorDao {
 				Autor a = new Autor();
 				a.setNome(rs.getString("nome"));
 				a.setEmail(rs.getString("email"));
-				a.setDataNascimento(rs.getDate("dataNascimento").toLocalDate());
-				
+				a.setDataNascimento(rs.getObject("dataNascimento", LocalDate.class));
+								
 				autores.add(a);
 				
 				}

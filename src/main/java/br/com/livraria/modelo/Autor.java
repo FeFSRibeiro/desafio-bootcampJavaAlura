@@ -1,5 +1,6 @@
 package br.com.livraria.modelo;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 
@@ -65,4 +66,5 @@ public class Autor {
 	public void setMiniCurriculo(String miniCurriculo) {
 		this.miniCurriculo = miniCurriculo;
 	}
+	
 }
