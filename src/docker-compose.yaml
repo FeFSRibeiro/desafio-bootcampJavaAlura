@@ -7,11 +7,11 @@ services:
       - db_data:/var/lib/mysql
     restart: unless-stopped
     ports:
-     - "3306:3306"
+     - "3306:3307"
     environment:
       MYSQL_ROOT_PASSWORD: mudar@123
-      MYSQL_DATABASE: carteira
-      MYSQL_USER: carteira
+      MYSQL_DATABASE: livraria
+      MYSQL_USER: livraria
       MYSQL_PASSWORD: mudar@123
 
 volumes:
